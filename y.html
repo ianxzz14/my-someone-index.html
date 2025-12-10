@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maaf Ya Sayang</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fecfef);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+            color: #fff;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff5252;
+        }
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            color: #ff6b6b;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+        @keyframes fall {
+            0% { top: -10%; left: 10%; opacity: 1; }
+            100% { top: 110%; left: 90%; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Maaf Ya Sayang! 😘</h1>
+        <p>Aku tahu aku salah, dan aku benar-benar minta maaf dari lubuk hati yang paling dalam. Kamu adalah orang yang paling aku sayangi di dunia ini, dan aku nggak mau kehilangan kamu karena kesalahan kecilku. Aku janji akan lebih perhatian, lebih sabar, dan lebih baik lagi ke depannya.</p>
+        <p>Ingat waktu pertama kita ketemu? Aku langsung jatuh cinta sama senyumanmu yang manis itu. Kamu bikin hidupku lebih berwarna, lebih bahagia. Tanpa kamu, hari-hariku terasa kosong dan hambar. Aku nggak mau ngambekan kamu lagi, karena aku tahu itu bikin kamu sedih, dan itu juga bikin aku sakit hati.</p>
+        <p>Jangan marah lagi dong, sayang. Aku siap lakuin apa aja buat bikin kamu senyum lagi. Mau aku bawain makanan kesukaanmu? Atau kita jalan-jalan ke tempat favorit kita? Aku cinta kamu lebih dari kata-kata bisa ungkapkan. Kamu adalah cahaya di hidupku, dan aku nggak bisa bayangin dunia tanpa kamu.</p>
+        <button onclick="showMessage()">Klik untuk Pesan Khusus</button>
+        <div id="specialMessage" style="display: none; margin-top: 20px;">
+            <p>💖 Kamu adalah segalanya buat aku. Aku janji nggak ulangi lagi, dan aku akan selalu ada buat kamu. Mari kita mulai hari baru dengan cinta yang lebih besar! 💖</p>
+            <p>Ingat, aku sayang kamu selamanya. Apa pun yang terjadi, aku akan selalu di sampingmu. Maafin aku ya, dan balas pesan ini kalau kamu udah nggak ngambek. 😘</p>
+        </div>
+    </div>
+
+    <!-- Animasi hati jatuh -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        setInterval(createHeart, 500);
+
+        function showMessage() {
+            document.getElementById('specialMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
